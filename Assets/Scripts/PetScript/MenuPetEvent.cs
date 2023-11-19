@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class MenuPetEvent : MonoBehaviour
 {
-    [SerializeField] bool isShowMenu;
+    [SerializeField] public bool isShowMenu;
     [SerializeField] GameObject MenuPet;
     [SerializeField] GameObject statusBar;
     [SerializeField] MoveObject moveObject;
@@ -31,7 +31,6 @@ public class MenuPetEvent : MonoBehaviour
         {
             MenuPet.SetActive(true);
             statusBar.SetActive(false);
-            moveObject.ChangeSpeed(0);
         }
         else
         {
@@ -44,24 +43,11 @@ public class MenuPetEvent : MonoBehaviour
     {
         MenuPet.SetActive(false);
         statusBar.SetActive(true);
-        moveObject.ChangeSpeed(1);
     }
 
     public void ChoAn()
     {
-
-        if (transform.tag == "Pig")
-        {
-            moveObject.NewDestination(MangAn.transform.position);
-        }
-        else
-        {
-            moveObject.NewDestination(Vector2.zero);
-        }
         thoiGianPhatTrien.DaChoAn();
-
         CloseMenu();
-
-
     }
 }

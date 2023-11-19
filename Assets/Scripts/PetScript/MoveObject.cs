@@ -5,17 +5,18 @@ using UnityEngine;
 public class MoveObject : MonoBehaviour
 {
     [SerializeField] float range;
-    [SerializeField] float maxDistance;
+    [SerializeField] Transform tfMin, tfMax;
     [SerializeField] GameObject MangAn;
-    [SerializeField] float speed = 0.4f;
+    [SerializeField] protected float speed = 0.4f;
+    [SerializeField] protected float delay = 5;
+    [SerializeField] protected SpriteRenderer spi;
 
-    Animator anim;
-    SpriteRenderer spi;
-
-    public float delay = 3;
+    [SerializeField] protected Animator anim;
+    //public float delay = 3;
     public float timer = 0;
-    public float currentXPos = 0;
-    public float checkFlip;
+    //public float currentXPos = 0;
+
+    public bool checkFlip = false;
 
     public Vector2 waypoint = Vector2.zero;
     void Start()
@@ -23,91 +24,56 @@ public class MoveObject : MonoBehaviour
         anim = GetComponent<Animator>();
         spi = GetComponent<SpriteRenderer>();
         MangAn = GameObject.Find("MangAn");
-        currentXPos = transform.position.x;
-        if (transform.tag == "Fish")
-        {
-            maxDistance = 1f;
 
-        }
+        NewDestination();
+        transform.position = waypoint;
         
     }
 
-    private void FixedUpdate()
+    public void SetTf(Transform tMin, Transform tMax)
     {
+        tfMin = tMin;
+        tfMax = tMax;
+    }
 
-        if (waypoint == Vector2.zero)
+    protected virtual void FixedUpdate()
+    {
+        Debug.Log("BASE");
+
+        if (timer <= delay)
         {
-
-            NewDestination(Vector2.zero);
-
-        }
-        float distance = Vector2.Distance(transform.position, waypoint);
-
-        if (distance <= 1)
-        {
-            currentXPos = transform.position.x;
+            anim.SetBool("move", false);
             timer += Time.deltaTime;
-            if (timer <= delay)
-            {
-                checkFlip = 0;
-                anim.SetBool("move", false);
-                return;
-            }
-            timer = 0;
-            waypoint = Vector2.zero;
+            return;
         }
-        if ((currentXPos != 0 && checkFlip < 2) || MangAn.GetComponent<MangAnManager>().choan)
-        {
-            Flip();
 
+        if (Vector3.Distance(waypoint, transform.position) >= 1f)
+        {
+            StartMove();
+            
+        } else
+        {
+            timer = 0;
+            NewDestination();
         }
-        StartMove();
     }
 
     void StartMove ()
     {
+
         anim.SetBool("move", true);
-
         transform.position = Vector2.MoveTowards(transform.position, waypoint, speed * Time.deltaTime);
-
-
-
+        
     }
 
-    public void NewDestination(Vector2 target)
+    public void NewDestination()
     {
 
-        if (target != Vector2.zero)
-        {
-            
-            waypoint = new Vector2(target.x, target.y);
-
-        } else 
-        {
-            float x = transform.position.x + Random.Range(-maxDistance, maxDistance);
-            float y = transform.position.y + Random.Range(-maxDistance, maxDistance);
-            waypoint = new Vector2(x, y);
-        }
-
+        waypoint = new Vector3(Random.Range(-1, 9), Random.Range(-4, 3));
+        spi.flipX = waypoint.x > transform.position.x;
     }
 
-    void Flip()
-    {
-
-        if (transform.position.x > currentXPos)
-        {
-            spi.flipX = true;
-        }
-        else
-        {
-            spi.flipX = false;
-        }
-
-        checkFlip += 1;
-
-    }
-    
-    public void ChangeSpeed(float newSpeed)
+    public virtual void ChangeSpeed(float newSpeed)
     {
         speed = newSpeed;
 

@@ -7,7 +7,7 @@ public class PetMono : MonoBehaviour
 {
     [SerializeField] MenuPetEvent menuPetEvent;
     [SerializeField] CongTienManager congTienManager;
-    [SerializeField] MoveObject moveObject;
+    [SerializeField] PetMovement petMovement;
     [SerializeField] string price;
     [SerializeField] float timeChoAn;
     [SerializeField] GameObject pet;
@@ -17,13 +17,20 @@ public class PetMono : MonoBehaviour
     private void Start()
     {
         congTienManager = GameObject.Find("==GameManager==").GetComponent<CongTienManager>();
-        moveObject = gameObject.GetComponent<MoveObject>();
+        petMovement = gameObject.GetComponent<PetMovement>();
         
     }
 
     public void ShowMenu()
     {
         menuPetEvent.ShowMenu();
+        if (menuPetEvent.GetComponent<MenuPetEvent>().isShowMenu)
+        {
+            petMovement.ChangeSpeed(0);
+        } else
+        {
+            petMovement.ChangeSpeed(1);
+        }
     }
 
     public void SellPet()
@@ -35,6 +42,12 @@ public class PetMono : MonoBehaviour
     public void ChoAn()
     {
         PetManager.instance.ChoAn();
+        if (transform.tag == "Pig")
+        {
+            Debug.Log("Pigg");
+            petMovement.SetTarget(GameObject.Find("MangAn").transform, 3);
+        }
+        petMovement.ChangeSpeed(1);
     }
 
     
