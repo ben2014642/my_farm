@@ -5,33 +5,32 @@ using UnityEngine;
 public class MoveObject : MonoBehaviour
 {
     [SerializeField] float range;
-    [SerializeField] Transform tfMin, tfMax;
-    [SerializeField] GameObject MangAn;
+    [SerializeField] protected Transform tfMin, tfMax;
+    [SerializeField] protected GameObject limitPosition;
     [SerializeField] protected float speed = 0.4f;
     [SerializeField] protected float delay = 5;
     [SerializeField] protected SpriteRenderer spi;
-
     [SerializeField] protected Animator anim;
-    //public float delay = 3;
     public float timer = 0;
-    //public float currentXPos = 0;
 
     public bool checkFlip = false;
 
     public Vector2 waypoint = Vector2.zero;
-    void Start()
+    protected virtual void Start()
     {
         anim = GetComponent<Animator>();
         spi = GetComponent<SpriteRenderer>();
-        MangAn = GameObject.Find("MangAn");
-
+        limitPosition = GameObject.Find("LimitPosition");
         NewDestination();
         transform.position = waypoint;
-        
-    }
 
+
+        tfMin = GetComponent<Transform>();
+
+    }
     public void SetTf(Transform tMin, Transform tMax)
     {
+
         tfMin = tMin;
         tfMax = tMax;
     }
@@ -69,7 +68,7 @@ public class MoveObject : MonoBehaviour
     public void NewDestination()
     {
 
-        waypoint = new Vector3(Random.Range(-1, 9), Random.Range(-4, 3));
+        waypoint = new Vector3(Random.Range(tfMin.position.x, tfMax.position.x), Random.Range(tfMin.position.y, tfMax.position.y));
         spi.flipX = waypoint.x > transform.position.x;
     }
 
