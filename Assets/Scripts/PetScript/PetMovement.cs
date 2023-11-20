@@ -9,27 +9,16 @@ public class PetMovement : MoveObject
     protected override void Start()
     {
         base.Start();
-        Transform tfMinGround = limitPosition.transform.Find("TfMinGround").GetComponent<Transform>();
-        Transform tfMaxGround = limitPosition.transform.Find("TfMaxGround").GetComponent<Transform>();
-        Transform tfMinWater = limitPosition.transform.Find("TfMinWater").GetComponent<Transform>();
-        Transform tfMaxWater = limitPosition.transform.Find("TfMaxWater").GetComponent<Transform>();
         NewDestination();
         transform.position = waypoint;
-
-        if (!transform.CompareTag("Fish"))
-        {
-            base.SetTf(tfMinGround, tfMaxGround);
-        }
-        else
-        {
-            base.SetTf(limitPosition.transform.Find("TfMinWater").transform, limitPosition.transform.Find("TfMaxWater").transform);
-        }
+        
     }
 
     public void SetTarget(Transform tf, float newDelay)
     {
         target = tf;
         delay = newDelay;
+        
     }
 
     protected override void FixedUpdate()

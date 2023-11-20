@@ -6,7 +6,6 @@ public class MoveObject : MonoBehaviour
 {
     [SerializeField] float range;
     [SerializeField] protected Transform tfMin, tfMax;
-    [SerializeField] protected GameObject limitPosition;
     [SerializeField] protected float speed = 0.4f;
     [SerializeField] protected float delay = 5;
     [SerializeField] protected SpriteRenderer spi;
@@ -20,12 +19,8 @@ public class MoveObject : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         spi = GetComponent<SpriteRenderer>();
-        limitPosition = GameObject.Find("LimitPosition");
         NewDestination();
         transform.position = waypoint;
-
-
-        tfMin = GetComponent<Transform>();
 
     }
     public void SetTf(Transform tMin, Transform tMax)
