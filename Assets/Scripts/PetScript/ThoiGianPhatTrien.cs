@@ -33,7 +33,8 @@ public class ThoiGianPhatTrien : MonoBehaviour
 
     protected void TimeDownEvent()
     {
-        if (remainingTime >= 0)
+        // Nếu pet chưa trưởng thành và không trong tình trạng đói
+        if (remainingTime >= 0 && remainingTimeChoAn >= 0)
         {
             timerText.text = MethodExtensions.RemainingTime(remainingTime);
             remainingTime -= 1;
@@ -42,6 +43,8 @@ public class ThoiGianPhatTrien : MonoBehaviour
         {
             healthBar.SetActive(false);
             statusText.SetActive(true);
+
+            // Ẩn các chức năng khác khi pet trưởng thành
             for (int i = 0; i < itemCare.Length; i++)
             {
                 itemCare[i].SetActive(false);
@@ -67,7 +70,6 @@ public class ThoiGianPhatTrien : MonoBehaviour
         remainingTimeChoAn = timeChoAn;
         healthBar.SetActive(true);
         statusText.SetActive(false);
-        Debug.Log("Da cho an");
 
     }
 }
