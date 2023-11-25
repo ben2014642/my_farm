@@ -7,7 +7,7 @@ using UnityEngine;
 public class PetModel
 {
     public int price;
-    public float remainingTime = 120;
+    public float remainingTime = 6;
     public float remainingTimeChoAn;
     public float timeChoAn = 5;
     public float speed = 1;

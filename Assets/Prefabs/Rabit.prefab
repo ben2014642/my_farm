@@ -548,6 +548,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5898069275679268193}
     m_Modifications:
+    - target: {fileID: 1134381679584233270, guid: b27ff124a29e6b145b55db12edac8d1f, type: 3}
+      propertyPath: statusText
+      value: 
+      objectReference: {fileID: 6385364619818571836}
     - target: {fileID: 2130493350314517813, guid: b27ff124a29e6b145b55db12edac8d1f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -649,6 +653,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b738d9280533c147aee5455eaacbace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &6385364619818571836 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2130493350586850020, guid: b27ff124a29e6b145b55db12edac8d1f, type: 3}
+  m_PrefabInstance: {fileID: 4975447485363094232}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &6385364620101134317 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2130493350314517813, guid: b27ff124a29e6b145b55db12edac8d1f, type: 3}

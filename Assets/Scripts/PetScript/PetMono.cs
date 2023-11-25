@@ -52,6 +52,8 @@ public class PetMono : MonoBehaviour
         {
             if (petModel.remainingTime <= 0)
             {
+                Debug.Log("truong thanh");
+                statusBar.SetActiveStatusText(true);
                 statusBar.SetActiveHealthBar(false);
                 statusBar.SetActiveTimerText(false);
                 statusBar.SetStatusText("Đã trưởng thành !");
@@ -107,8 +109,11 @@ public class PetMono : MonoBehaviour
         }
         else
         {
-            statusBar.SetActiveHealthBar(false);
-            statusBar.SetStatusText("Đói quá");
+            if (petModel.remainingTime >= 0)
+            {
+                statusBar.SetActiveHealthBar(false);
+                statusBar.SetStatusText("Đói quá");
+            }
         }
     }
 
