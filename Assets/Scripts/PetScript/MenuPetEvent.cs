@@ -8,8 +8,8 @@ public class MenuPetEvent : MonoBehaviour
     [SerializeField] public bool isShowMenu;
     [SerializeField] GameObject MenuPet;
     [SerializeField] GameObject statusBar;
-    [SerializeField] MoveObject moveObject;
-    [SerializeField] GameObject MangAn;
+    MoveObject moveObject;
+    GameObject MangAn;
     [SerializeField] ThoiGianPhatTrien thoiGianPhatTrien;
 
 

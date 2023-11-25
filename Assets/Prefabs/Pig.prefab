@@ -384,7 +384,6 @@ GameObject:
   - component: {fileID: 260647262645204503}
   - component: {fileID: 260647262645204502}
   - component: {fileID: 260647262645204501}
-  - component: {fileID: 260647262645204500}
   - component: {fileID: 260647262645204499}
   - component: {fileID: 260647262645204497}
   - component: {fileID: 260647262645204498}
@@ -505,24 +504,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &260647262645204500
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 260647262645204511}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53ac040268d0d144fba60effe6f32840, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  range: 0
-  tfMin: {fileID: 260647262645204496}
-  tfMax: {fileID: 260647262645204496}
-  speed: 1
-  delay: 3
-  timer: 0.7599998
 --- !u!114 &260647262645204499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -535,18 +516,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ab82181f32f4cf4abd7543cc2326cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuPetEvent: {fileID: 0}
-  tgpt: {fileID: 0}
-  price: 
-  pet: {fileID: 0}
+  timerText: {fileID: 260647261308511967}
+  remainingTime: 22
+  remainingTimeChoAn: 0
   healthBar: {fileID: 260647262070382757}
   statusText: {fileID: 260647262512235591}
   itemCare:
   - {fileID: 260647261606171363}
   - {fileID: 260647262042195926}
-  timerText: {fileID: 260647261308511967}
-  remainingTime: 22
-  remainingTimeChoAn: 0
 --- !u!114 &260647262645204497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -560,12 +537,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuPetEvent: {fileID: 260647262645204498}
-  tgpt: {fileID: 0}
   price: 
   pet: {fileID: 260647262645204511}
-  healthBar: {fileID: 0}
-  statusText: {fileID: 0}
-  itemCare: []
 --- !u!114 &260647262645204498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -581,8 +554,6 @@ MonoBehaviour:
   isShowMenu: 0
   MenuPet: {fileID: 260647262528839301}
   statusBar: {fileID: 260647262791924629}
-  moveObject: {fileID: 260647262645204500}
-  MangAn: {fileID: 0}
   thoiGianPhatTrien: {fileID: 260647262645204499}
 --- !u!114 &5927906492997276256
 MonoBehaviour:
@@ -744,27 +715,35 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6889290208358113517, guid: fc287883f84aa7a40bca78d2207cf997, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.051
+      value: -0.096
       objectReference: {fileID: 0}
     - target: {fileID: 6889290208358113517, guid: fc287883f84aa7a40bca78d2207cf997, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.219
+      value: 0.213
       objectReference: {fileID: 0}
     - target: {fileID: 6889290209250246040, guid: fc287883f84aa7a40bca78d2207cf997, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1.3361
+      value: 0.975
       objectReference: {fileID: 0}
     - target: {fileID: 6889290209250246040, guid: fc287883f84aa7a40bca78d2207cf997, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0.1436
+      value: 0.0985
       objectReference: {fileID: 0}
     - target: {fileID: 6889290209250246040, guid: fc287883f84aa7a40bca78d2207cf997, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.021125
+      value: -0.0903
       objectReference: {fileID: 0}
     - target: {fileID: 6889290209250246040, guid: fc287883f84aa7a40bca78d2207cf997, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.023
+      value: -0.049274962
+      objectReference: {fileID: 0}
+    - target: {fileID: 6889290209592731285, guid: fc287883f84aa7a40bca78d2207cf997, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.054
+      objectReference: {fileID: 0}
+    - target: {fileID: 6889290209592731285, guid: fc287883f84aa7a40bca78d2207cf997, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.085
       objectReference: {fileID: 0}
     - target: {fileID: 6889290210045607333, guid: fc287883f84aa7a40bca78d2207cf997, type: 3}
       propertyPath: m_Pivot.x
@@ -856,19 +835,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6889290210053530444, guid: fc287883f84aa7a40bca78d2207cf997, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1.3361
+      value: 0.97503
       objectReference: {fileID: 0}
     - target: {fileID: 6889290210053530444, guid: fc287883f84aa7a40bca78d2207cf997, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0.1436
+      value: 0.0985
       objectReference: {fileID: 0}
     - target: {fileID: 6889290210053530444, guid: fc287883f84aa7a40bca78d2207cf997, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.021117
+      value: -0.090316
       objectReference: {fileID: 0}
     - target: {fileID: 6889290210053530444, guid: fc287883f84aa7a40bca78d2207cf997, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.023012
+      value: -0.049274
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc287883f84aa7a40bca78d2207cf997, type: 3}
