@@ -257,7 +257,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 260647262645204497}
+      - m_Target: {fileID: 2264064197372546655}
         m_TargetAssemblyTypeName: PetMono, Assembly-CSharp
         m_MethodName: ShowMenu
         m_Mode: 1
@@ -384,7 +384,7 @@ GameObject:
   - component: {fileID: 260647262645204503}
   - component: {fileID: 260647262645204502}
   - component: {fileID: 260647262645204501}
-  - component: {fileID: 260647262645204497}
+  - component: {fileID: 2264064197372546655}
   - component: {fileID: 5927906492997276256}
   m_Layer: 0
   m_Name: Pig
@@ -502,7 +502,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &260647262645204497
+--- !u!114 &2264064197372546655
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -511,16 +511,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 260647262645204511}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab53acb6fded1044191da8a50275a5ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 0785f3d25093ef249b005cd57a78f05e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   menuPetEvent: {fileID: 389241350}
   statusBar: {fileID: 2921269092571803796}
   petModel:
     price: 0
-    remainingTime: 120
+    remainingTime: 15
     remainingTimeChoAn: 0
-    timeChoAn: 0
+    timeChoAn: 2
     speed: 1
   pet: {fileID: 260647262645204511}
 --- !u!114 &5927906492997276256
@@ -548,6 +548,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 260647261571998011}
     m_Modifications:
+    - target: {fileID: 1134381679584233270, guid: b27ff124a29e6b145b55db12edac8d1f, type: 3}
+      propertyPath: timerText
+      value: 
+      objectReference: {fileID: 4225859184333852638}
     - target: {fileID: 2130493350314517813, guid: b27ff124a29e6b145b55db12edac8d1f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -654,6 +658,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2130493350314517813, guid: b27ff124a29e6b145b55db12edac8d1f, type: 3}
   m_PrefabInstance: {fileID: 2824967406378923938}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4225859184333852638 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2130493351798978684, guid: b27ff124a29e6b145b55db12edac8d1f, type: 3}
+  m_PrefabInstance: {fileID: 2824967406378923938}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7347336576123305499
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -664,11 +679,15 @@ PrefabInstance:
     - target: {fileID: 4013512368543499727, guid: 0a17926e250386a44aa9d1a2f8234cfd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 260647262645204497}
+      objectReference: {fileID: 2264064197372546655}
+    - target: {fileID: 4013512368543499727, guid: 0a17926e250386a44aa9d1a2f8234cfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PigMono, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 7379423956697437627, guid: 0a17926e250386a44aa9d1a2f8234cfd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 260647262645204497}
+      objectReference: {fileID: 2264064197372546655}
     - target: {fileID: 7379423957463982237, guid: 0a17926e250386a44aa9d1a2f8234cfd, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -699,7 +718,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7379423957463982237, guid: 0a17926e250386a44aa9d1a2f8234cfd, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1.9797
+      value: 1.5857
       objectReference: {fileID: 0}
     - target: {fileID: 7379423957463982237, guid: 0a17926e250386a44aa9d1a2f8234cfd, type: 3}
       propertyPath: m_SizeDelta.y
@@ -735,11 +754,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7379423957463982237, guid: 0a17926e250386a44aa9d1a2f8234cfd, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.000000029802
+      value: -0.0057
       objectReference: {fileID: 0}
     - target: {fileID: 7379423957463982237, guid: 0a17926e250386a44aa9d1a2f8234cfd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.35
+      value: 0.344
       objectReference: {fileID: 0}
     - target: {fileID: 7379423957463982237, guid: 0a17926e250386a44aa9d1a2f8234cfd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -757,10 +776,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: MenuPet
       objectReference: {fileID: 0}
+    - target: {fileID: 7379423957463982238, guid: 0a17926e250386a44aa9d1a2f8234cfd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7379423957504419514, guid: 0a17926e250386a44aa9d1a2f8234cfd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 260647262645204497}
+      objectReference: {fileID: 2264064197372546655}
+    - target: {fileID: 7379423957504419514, guid: 0a17926e250386a44aa9d1a2f8234cfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SellPet
+      objectReference: {fileID: 0}
+    - target: {fileID: 7379423957504419514, guid: 0a17926e250386a44aa9d1a2f8234cfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PetMono, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a17926e250386a44aa9d1a2f8234cfd, type: 3}
 --- !u!114 &389241350 stripped

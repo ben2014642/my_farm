@@ -2663,6 +2663,7 @@ MonoBehaviour:
   tfMaxGround: {fileID: 231881987}
   tfMinWater: {fileID: 248725425}
   tfMaxWater: {fileID: 85039336}
+  mangAn: {fileID: 1346480694}
   objPig: {fileID: 260647262645204511, guid: 9501bd421d2c24f4181332ecef133d3a, type: 3}
   objRabit: {fileID: 5898069274606062149, guid: 2d7243b398181d5499b6591da9737a79, type: 3}
   objGa: {fileID: 9120763576701410611, guid: 1fa987fb29a124f4b9f9bcabd2a98af9, type: 3}
@@ -6252,33 +6253,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 260647262645204497, guid: 9501bd421d2c24f4181332ecef133d3a, type: 3}
-      propertyPath: petModel.timeChoAn
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 260647262645204497, guid: 9501bd421d2c24f4181332ecef133d3a, type: 3}
-      propertyPath: petModel.remainingTime
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 260647262645204511, guid: 9501bd421d2c24f4181332ecef133d3a, type: 3}
       propertyPath: m_Name
       value: Pig
-      objectReference: {fileID: 0}
-    - target: {fileID: 4225859182883082900, guid: 9501bd421d2c24f4181332ecef133d3a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4225859183130062150, guid: 9501bd421d2c24f4181332ecef133d3a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4225859183637973412, guid: 9501bd421d2c24f4181332ecef133d3a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4225859184333852636, guid: 9501bd421d2c24f4181332ecef133d3a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5927906492997276256, guid: 9501bd421d2c24f4181332ecef133d3a, type: 3}
       propertyPath: tfMax

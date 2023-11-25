@@ -5,17 +5,15 @@ using UnityEngine;
 
 public class PetMono : MonoBehaviour
 {
-    [SerializeField] MenuPetEvent menuPetEvent;
+    [SerializeField] protected MenuPetEvent menuPetEvent;
     [SerializeField] StatusBar statusBar;
     [SerializeField] PetModel petModel;
     [SerializeField] GameObject pet;    
-
-    CongTienManager congTienManager;
-    PetMovement petMovement;
+    protected PetMovement petMovement;
 
     protected static Action petAction;
 
-    private void OnEnable()
+    protected virtual void OnEnable()
     {
         TimerManager.timeDownEvent += TimeDownEvent;
         TimerManager.timeDownEvent += ThoiGianChoAn;
@@ -23,7 +21,7 @@ public class PetMono : MonoBehaviour
         //timerText.text = MethodExtensions.RemainingTime(remainingTime);
     }
 
-    private void OnDisable()
+    protected virtual void OnDisable()
     {
         TimerManager.timeDownEvent -= TimeDownEvent;
         TimerManager.timeDownEvent -= ThoiGianChoAn;
@@ -32,7 +30,6 @@ public class PetMono : MonoBehaviour
     }
     private void Start()
     {
-        congTienManager = GameObject.Find("==GameManager==").GetComponent<CongTienManager>();
         petMovement = gameObject.GetComponent<PetMovement>();
         statusBar.SetTime(MethodExtensions.RemainingTime(petModel.remainingTime));
         petModel.remainingTimeChoAn = petModel.timeChoAn;
@@ -73,31 +70,18 @@ public class PetMono : MonoBehaviour
     public void SellPet()
     {
 
-        StartCoroutine(destroyPet());
+        //StartCoroutine(destroyPet());
+        CongTienManager.instance.CreateText(transform.position, petModel.GetCoinSell());
+        Destroy(gameObject, .1f);
 
     }
 
-    public void ChoAn()
+    public virtual void ChoAn()
     {
 
-        PetManager.Instance.ChoAn();
-        if (transform.tag == "Pig")
-        {
-            petMovement.SetTarget(GameObject.Find("MangAn").transform, 3);
-        }
         petMovement.ChangeSpeed(1);
-
         menuPetEvent.ShowMenu();
         petAction?.Invoke();
-    }
-
-    
-
-    public IEnumerator destroyPet()
-    {
-        congTienManager.CreateText(transform, "+100 coints");
-        yield return new WaitForSeconds(1);
-        Destroy(pet);
     }
 
 

@@ -33,8 +33,6 @@ public class MoveObject : MonoBehaviour
 
     protected virtual void FixedUpdate()
     {
-        Debug.Log("BASE");
-
         if (timer <= delay)
         {
             anim.SetBool("move", false);

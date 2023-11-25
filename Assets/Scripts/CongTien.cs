@@ -27,6 +27,11 @@ public class CongTien : MonoBehaviour
         transform.Translate(Vector2.up * speed * Time.deltaTime);
     }
 
+    public void SetText(string text)
+    {
+        congTienUI.text = text;
+    }
+
     public IEnumerator FadeOut()
     {
         float startAlpha = congTienUI.color.a;

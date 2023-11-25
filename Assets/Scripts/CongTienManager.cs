@@ -6,9 +6,16 @@ public class CongTienManager : MonoBehaviour
 {
     public static CongTienManager instance;
     [SerializeField] GameObject congTienPrefab;
-    
-    public void CreateText(Transform position, string text)
+    int sumcoint = 0;
+    private void Awake()
     {
-        Instantiate(congTienPrefab, position);
+        instance = this;
+    }
+    public void CreateText(Vector2 position, int coint)
+    {
+        var obj = Instantiate(congTienPrefab);
+        obj.transform.position = position;
+        obj.GetComponent<CongTien>().SetText($"+ {coint} Coin");
+        sumcoint += coint;
     }
 }

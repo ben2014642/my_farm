@@ -129,8 +129,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 2130493350901841414}
-  timerText: {fileID: 2130493350586848538}
-  statusText: {fileID: 2130493350586850020}
+  timerText: {fileID: 2130493351798978684}
+  statusText: {fileID: 2130493350586848538}
   frontHealthBar: {fileID: 2130493351649338639}
 --- !u!1 &2130493350586850020
 GameObject:

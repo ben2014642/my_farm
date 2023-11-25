@@ -35,14 +35,12 @@ public class PetMovement : MoveObject
         {
             if (Vector3.Distance(transform.position, target.position) >= 1f)
             {
-                Debug.Log("chua den");
                 anim.SetBool("move", true);
                 transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
                 spi.flipX = target.position.x > transform.position.x;
             }
             else
             {
-                Debug.Log("da den");
 
                 target = null;
                 timer = 0;

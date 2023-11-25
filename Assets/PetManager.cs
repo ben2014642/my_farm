@@ -12,22 +12,20 @@ public class PetManager : MonoBehaviour
     protected static PetManager instance;
     public static PetManager Instance { get => instance; }
     public static Action petAction;
-    [SerializeField] Transform tfMinGround;
-    [SerializeField] Transform tfMaxGround;
-    [SerializeField] Transform tfMinWater;
-    [SerializeField] Transform tfMaxWater;
+    public Transform tfMinGround;
+    public Transform tfMaxGround;
+    public Transform tfMinWater;
+    public Transform tfMaxWater;
+    public MangAnManager mangAn;
+
     [SerializeField] GameObject objPig, objRabit, objGa, objFish;
     private void Awake()
     {
         instance = this;
         for (int i = 0; i < 5; i++)
         {
-            Spawn("objRabit");
+            Spawn("objPig");
         }
-    }
-    public void ChoAn()
-    {
-        petAction?.Invoke();
     }
 
     public void Spawn(string petName)
