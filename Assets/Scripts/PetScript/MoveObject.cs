@@ -8,19 +8,20 @@ public class MoveObject : MonoBehaviour
     [SerializeField] protected Transform tfMin, tfMax;
     [SerializeField] protected float speed = 0.4f;
     [SerializeField] protected float delay = 5;
-    [SerializeField] protected SpriteRenderer spi;
-    [SerializeField] protected Animator anim;
+    protected SpriteRenderer spi;
+    protected Animator anim;
     public float timer = 0;
 
-    public bool checkFlip = false;
-
-    public Vector2 waypoint = Vector2.zero;
+    protected Vector2 waypoint = Vector2.zero;
     protected virtual void Start()
     {
         anim = GetComponent<Animator>();
         spi = GetComponent<SpriteRenderer>();
-        NewDestination();
         transform.position = waypoint;
+        if (tfMax != null && tfMin != null)
+        {
+            NewDestination();
+        }
 
     }
     public void SetTf(Transform tMin, Transform tMax)

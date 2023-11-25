@@ -6,19 +6,19 @@ using UnityEngine;
 public class PetMono : MonoBehaviour
 {
     [SerializeField] MenuPetEvent menuPetEvent;
-    [SerializeField] CongTienManager congTienManager;
-    [SerializeField] PetMovement petMovement;
     [SerializeField] string price;
-    [SerializeField] float timeChoAn;
     [SerializeField] GameObject pet;
 
-    public static Action petAction;
+    CongTienManager congTienManager;
+    PetMovement petMovement;
+
+    protected static Action petAction;
 
     private void Start()
     {
         congTienManager = GameObject.Find("==GameManager==").GetComponent<CongTienManager>();
         petMovement = gameObject.GetComponent<PetMovement>();
-        
+
     }
 
     public void ShowMenu()
@@ -37,11 +37,13 @@ public class PetMono : MonoBehaviour
     {
 
         StartCoroutine(destroyPet());
+        Debug.Log("sell pet");
+
     }
 
     public void ChoAn()
     {
-        PetManager.instance.ChoAn();
+        PetManager.Instance.ChoAn();
         if (transform.tag == "Pig")
         {
             Debug.Log("Pigg");

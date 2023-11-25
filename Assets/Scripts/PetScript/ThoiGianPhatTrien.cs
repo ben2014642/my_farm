@@ -7,21 +7,24 @@ public class ThoiGianPhatTrien : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timerText;
     [SerializeField] float remainingTime = 120;
-    public float timeChoAn = 5;
-    [SerializeField] float remainingTimeChoAn;
-    [SerializeField] GameObject healthBar;
-    [SerializeField] GameObject statusText;
-    [SerializeField] GameObject[] itemCare;
+    [SerializeField] public float remainingTimeChoAn;
+
+    [SerializeField] protected GameObject healthBar;
+    [SerializeField] protected GameObject statusText;
+    [SerializeField] protected List<GameObject> itemCare;
+
+    protected float timeChoAn;
+
     private void Start()
     {
         statusText.SetActive(false);
         remainingTimeChoAn = timeChoAn;
     }
-
     private void OnEnable()
     {
         TimerManager.timeDownEvent += TimeDownEvent;
         TimerManager.timeDownEvent += ThoiGianChoAn;
+        timerText.text = MethodExtensions.RemainingTime(remainingTime);
     }
 
     private void OnDisable()
@@ -41,13 +44,16 @@ public class ThoiGianPhatTrien : MonoBehaviour
 
         } else
         {
-            healthBar.SetActive(false);
-            statusText.SetActive(true);
-
-            // Ẩn các chức năng khác khi pet trưởng thành
-            for (int i = 0; i < itemCare.Length; i++)
+            if (remainingTime <= 0)
             {
-                itemCare[i].SetActive(false);
+                healthBar.SetActive(false);
+                statusText.SetActive(true);
+
+                // Ẩn các chức năng khác khi pet trưởng thành
+                for (int i = 0; i < itemCare.Count; i++)
+                {
+                    itemCare[i].SetActive(false);
+                }
             }
         }
     }

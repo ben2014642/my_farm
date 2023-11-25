@@ -9,7 +9,8 @@ public class PetManager : MonoBehaviour
     const string nameGa = "objGa";
     const string namePig = "objPig";
     const string nameRabit = "objRabit";
-    public static PetManager instance { get; set; }
+    protected static PetManager instance;
+    public static PetManager Instance { get => instance; }
     public static Action petAction;
     [SerializeField] Transform tfMinGround;
     [SerializeField] Transform tfMaxGround;

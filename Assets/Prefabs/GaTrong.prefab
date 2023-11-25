@@ -555,14 +555,9 @@ MonoBehaviour:
   range: 0
   tfMin: {fileID: 9120763576701410620}
   tfMax: {fileID: 9120763576701410620}
-  MangAn: {fileID: 0}
   speed: 1
   delay: 3
-  spi: {fileID: 9120763576701410619}
-  anim: {fileID: 0}
   timer: 0.7599998
-  checkFlip: 0
-  waypoint: {x: 0.41293097, y: 0.1925335}
 --- !u!114 &9120763576701410623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -575,15 +570,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ab82181f32f4cf4abd7543cc2326cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerText: {fileID: 9120763577509481971}
-  remainingTime: 22
-  timeChoAn: 3
-  remainingTimeChoAn: 0
+  menuPetEvent: {fileID: 0}
+  tgpt: {fileID: 0}
+  price: 
+  pet: {fileID: 0}
   healthBar: {fileID: 9120763576126851977}
   statusText: {fileID: 9120763576565804907}
   itemCare:
   - {fileID: 9120763577807419855}
   - {fileID: 9120763576096320762}
+  timerText: {fileID: 9120763577509481971}
+  remainingTime: 22
+  remainingTimeChoAn: 0
 --- !u!114 &9120763576701410621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -597,11 +595,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuPetEvent: {fileID: 9120763576701410622}
-  congTienManager: {fileID: 0}
-  petMovement: {fileID: 0}
+  tgpt: {fileID: 0}
   price: 
-  timeChoAn: 3
   pet: {fileID: 9120763576701410611}
+  healthBar: {fileID: 0}
+  statusText: {fileID: 0}
+  itemCare: []
 --- !u!114 &9120763576701410622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -635,14 +634,9 @@ MonoBehaviour:
   range: 0
   tfMin: {fileID: 0}
   tfMax: {fileID: 0}
-  MangAn: {fileID: 0}
   speed: 1
   delay: 3
-  spi: {fileID: 9120763576701410619}
-  anim: {fileID: 9120763576701410618}
   timer: 0
-  checkFlip: 0
-  waypoint: {x: 0, y: 0}
 --- !u!1 &9120763576848289977
 GameObject:
   m_ObjectHideFlags: 0
@@ -960,7 +954,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f4ad75c0bc475484395246f144dbb983, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 81d2eb9174320f94d83b4d0f7fe3b4b2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

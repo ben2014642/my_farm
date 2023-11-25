@@ -144,19 +144,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53ac040268d0d144fba60effe6f32840, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuPetEvent: {fileID: 0}
-  congTienManager: {fileID: 0}
-  price: 
-  pet: {fileID: 0}
   range: 0
-  maxDistance: 3
-  MangAn: {fileID: 0}
+  tfMin: {fileID: 0}
+  tfMax: {fileID: 0}
   speed: 1
   delay: 3
   timer: 0.7599998
-  currentXPos: 1.2730048
-  checkFlip: 0
-  waypoint: {x: 0.41293097, y: 0.1925335}
 --- !u!114 &5898069274606062153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,13 +162,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ab82181f32f4cf4abd7543cc2326cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerText: {fileID: 5898069276490177157}
-  remainingTime: 4
+  menuPetEvent: {fileID: 0}
+  tgpt: {fileID: 0}
+  price: 
+  pet: {fileID: 0}
   healthBar: {fileID: 5898069275105385727}
-  truongThanh: {fileID: 5898069274741127197}
+  statusText: {fileID: 0}
   itemCare:
   - {fileID: 5898069275714367161}
   - {fileID: 5898069275076950924}
+  timerText: {fileID: 5898069276490177157}
+  remainingTime: 4
+  remainingTimeChoAn: 0
 --- !u!114 &5898069274606062155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,9 +187,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuPetEvent: {fileID: 5898069274606062152}
-  congTienManager: {fileID: 0}
+  tgpt: {fileID: 0}
   price: 
   pet: {fileID: 5898069274606062149}
+  healthBar: {fileID: 0}
+  statusText: {fileID: 0}
+  itemCare: []
 --- !u!114 &5898069274606062152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,6 +209,8 @@ MonoBehaviour:
   MenuPet: {fileID: 5898069274758144735}
   statusBar: {fileID: 5898069275021445071}
   moveObject: {fileID: 5898069274606062158}
+  MangAn: {fileID: 0}
+  thoiGianPhatTrien: {fileID: 0}
 --- !u!1 &5898069274741127197
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,7 +629,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f4ad75c0bc475484395246f144dbb983, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 81d2eb9174320f94d83b4d0f7fe3b4b2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
