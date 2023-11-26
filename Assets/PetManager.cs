@@ -22,9 +22,9 @@ public class PetManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 1; i++)
         {
-            Spawn("objFish");
+            Spawn("objGa");
         }
     }
 

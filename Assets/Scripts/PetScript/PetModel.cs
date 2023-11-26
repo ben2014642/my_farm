@@ -10,6 +10,7 @@ public class PetModel
     public float remainingTime = 6;
     public float remainingTimeChoAn;
     public float timeChoAn = 5;
+    public float timeDeTrung = 5;
     public float speed = 1;
 
     internal int GetCoinSell()

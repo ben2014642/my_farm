@@ -122,8 +122,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5630114786063863941}
-        m_TargetAssemblyTypeName: PetMono, Assembly-CSharp
+      - m_Target: {fileID: 3069344952730804672}
+        m_TargetAssemblyTypeName: MenuPetEvent, Assembly-CSharp
         m_MethodName: ShowMenu
         m_Mode: 1
         m_Arguments:
@@ -449,7 +449,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 5
   m_Sprite: {fileID: 1757120387, guid: 3271bf900ddafbc458072586c5bc84be, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -521,6 +521,7 @@ MonoBehaviour:
     remainingTime: 120
     remainingTimeChoAn: 0
     timeChoAn: 5
+    timeDeTrung: 5
     speed: 1
   pet: {fileID: 5630114786063863947}
 --- !u!114 &2303601451096646161
@@ -676,7 +677,15 @@ PrefabInstance:
     - target: {fileID: 7379423956697437627, guid: 0a17926e250386a44aa9d1a2f8234cfd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 5630114786063863941}
+      objectReference: {fileID: 3069344952730804672}
+    - target: {fileID: 7379423956697437627, guid: 0a17926e250386a44aa9d1a2f8234cfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CloseMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 7379423956697437627, guid: 0a17926e250386a44aa9d1a2f8234cfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MenuPetEvent, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 7379423957463982237, guid: 0a17926e250386a44aa9d1a2f8234cfd, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

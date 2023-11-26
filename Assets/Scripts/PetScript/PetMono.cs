@@ -7,7 +7,7 @@ public class PetMono : MonoBehaviour
 {
     [SerializeField] protected MenuPetEvent menuPetEvent;
     [SerializeField] StatusBar statusBar;
-    [SerializeField] PetModel petModel;
+    [SerializeField] protected PetModel petModel;
     [SerializeField] GameObject pet;    
     protected PetMovement petMovement;
 
@@ -46,15 +46,14 @@ public class PetMono : MonoBehaviour
         }
         else
         {
-            if (petModel.remainingTime <= 0)
+            if (petModel.remainingTime <= 0 )
             {
-                Debug.Log("truong thanh");
                 statusBar.SetActiveStatusText(true);
                 statusBar.SetActiveHealthBar(false);
                 statusBar.SetActiveTimerText(false);
                 statusBar.SetStatusText("Đã trưởng thành !");
-                // Ẩn các chức năng khác khi pet trưởng thành
                 menuPetEvent.hideItemCare();
+                
             }
         }
     }
@@ -68,8 +67,6 @@ public class PetMono : MonoBehaviour
 
     public void SellPet()
     {
-
-        //StartCoroutine(destroyPet());
         CongTienManager.instance.CreateText(transform.position, petModel.GetCoinSell());
         Destroy(gameObject, .1f);
 
@@ -86,6 +83,8 @@ public class PetMono : MonoBehaviour
             if (petModel.remainingTime >= 0)
             {
                 statusBar.SetActiveHealthBar(false);
+                statusBar.SetActiveStatusText(true);
+
                 statusBar.SetStatusText("Đói quá");
             }
         }
