@@ -230,7 +230,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 5
   m_TargetDisplay: 0
 --- !u!114 &5898069275679268199
 MonoBehaviour:
@@ -679,11 +679,19 @@ PrefabInstance:
     - target: {fileID: 4013512368543499727, guid: 0a17926e250386a44aa9d1a2f8234cfd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 5898069274606062155}
+      objectReference: {fileID: 474580174793866975}
     - target: {fileID: 4013512368543499727, guid: 0a17926e250386a44aa9d1a2f8234cfd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ChoAn
+      value: ClickChoAn
       objectReference: {fileID: 0}
+    - target: {fileID: 4013512368543499727, guid: 0a17926e250386a44aa9d1a2f8234cfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MenuPetEvent, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7379423956697437627, guid: 0a17926e250386a44aa9d1a2f8234cfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5898069274606062155}
     - target: {fileID: 7379423957463982237, guid: 0a17926e250386a44aa9d1a2f8234cfd, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -774,7 +782,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7379423957463982238, guid: 0a17926e250386a44aa9d1a2f8234cfd, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7379423957504419514, guid: 0a17926e250386a44aa9d1a2f8234cfd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

@@ -330,7 +330,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 5
   m_TargetDisplay: 0
 --- !u!114 &260647261571998013
 MonoBehaviour:
@@ -679,10 +679,14 @@ PrefabInstance:
     - target: {fileID: 4013512368543499727, guid: 0a17926e250386a44aa9d1a2f8234cfd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2264064197372546655}
+      objectReference: {fileID: 389241350}
+    - target: {fileID: 4013512368543499727, guid: 0a17926e250386a44aa9d1a2f8234cfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ClickChoAn
+      objectReference: {fileID: 0}
     - target: {fileID: 4013512368543499727, guid: 0a17926e250386a44aa9d1a2f8234cfd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PigMono, Assembly-CSharp
+      value: MenuPetEvent, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7379423956697437627, guid: 0a17926e250386a44aa9d1a2f8234cfd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

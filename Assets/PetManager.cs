@@ -24,7 +24,7 @@ public class PetManager : MonoBehaviour
         instance = this;
         for (int i = 0; i < 5; i++)
         {
-            Spawn("objPig");
+            Spawn("objFish");
         }
     }
 

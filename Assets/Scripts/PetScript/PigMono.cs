@@ -8,13 +8,13 @@ public class PigMono : PetMono
     protected override void OnEnable()
     {
         base.OnEnable();
-        petAction += SetTargetToMangAn;
+        MyAction.petAction += SetTargetToMangAn;
     }
 
     protected override void OnDisable()
     {
         base.OnDisable();
-        petAction -= SetTargetToMangAn;
+        MyAction.petAction -= SetTargetToMangAn;
     }
 
     void SetTargetToMangAn()

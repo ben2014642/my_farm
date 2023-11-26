@@ -1,18 +1,23 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class MenuPetEvent : MonoBehaviour
 {
-    [SerializeField] public bool isShowMenu;
     [SerializeField] List<GameObject> itemCare;
+    [SerializeField] Button btnSell;
 
     public void ShowMenu()
     {
-        isShowMenu = !isShowMenu;
-        gameObject.SetActive(isShowMenu);
+        gameObject.SetActive(!gameObject.activeSelf);
         
+    }
+
+    public void AddSell(UnityAction action)
+    {
+        btnSell.onClick.AddListener(action);
     }
 
     public void hideItemCare()
@@ -21,5 +26,15 @@ public class MenuPetEvent : MonoBehaviour
         {
             itemCare[i].SetActive(false);
         }
+    }
+
+    public void ClickChoAn()
+    {
+        MyAction.petAction?.Invoke();
+    }
+
+    public void CloseMenu()
+    {
+        gameObject.SetActive(false);
     }
 }

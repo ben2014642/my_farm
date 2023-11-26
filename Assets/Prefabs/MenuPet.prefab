@@ -122,9 +122,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PetMono, Assembly-CSharp
-        m_MethodName: ChoAn
+      - m_Target: {fileID: 7347336576476849181}
+        m_TargetAssemblyTypeName: MenuPetEvent, Assembly-CSharp
+        m_MethodName: ClickChoAn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -436,9 +436,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 634c0b1429a8d6b48bb06d1047e628cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isShowMenu: 0
   itemCare:
   - {fileID: 7379423956239297784}
+  btnSell: {fileID: 7379423957504419514}
 --- !u!1 &7379423957504419508
 GameObject:
   m_ObjectHideFlags: 0
@@ -560,19 +560,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7379423957504419513}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PetMono, Assembly-CSharp
-        m_MethodName: SellPet
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &7379423957505759887
 GameObject:
   m_ObjectHideFlags: 0

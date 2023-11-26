@@ -11,13 +11,11 @@ public class PetMono : MonoBehaviour
     [SerializeField] GameObject pet;    
     protected PetMovement petMovement;
 
-    protected static Action petAction;
-
     protected virtual void OnEnable()
     {
         TimerManager.timeDownEvent += TimeDownEvent;
         TimerManager.timeDownEvent += ThoiGianChoAn;
-        petAction += DaChoAn;
+        MyAction.petAction += DaChoAn;
         //timerText.text = MethodExtensions.RemainingTime(remainingTime);
     }
 
@@ -25,7 +23,7 @@ public class PetMono : MonoBehaviour
     {
         TimerManager.timeDownEvent -= TimeDownEvent;
         TimerManager.timeDownEvent -= ThoiGianChoAn;
-        petAction -= DaChoAn;
+        MyAction.petAction -= DaChoAn;
 
     }
     private void Start()
@@ -33,6 +31,7 @@ public class PetMono : MonoBehaviour
         petMovement = gameObject.GetComponent<PetMovement>();
         statusBar.SetTime(MethodExtensions.RemainingTime(petModel.remainingTime));
         petModel.remainingTimeChoAn = petModel.timeChoAn;
+        menuPetEvent.AddSell(SellPet);
     }
 
     protected void TimeDownEvent()
@@ -63,8 +62,8 @@ public class PetMono : MonoBehaviour
     public void ShowMenu()
     {
         menuPetEvent.ShowMenu();
-        statusBar.SetActiveHealthBar(!menuPetEvent.isShowMenu);
-        petMovement.ChangeSpeed(menuPetEvent.isShowMenu ? 0 : 1);
+        statusBar.SetActiveHealthBar(!menuPetEvent.gameObject.activeSelf);
+        petMovement.ChangeSpeed(menuPetEvent.gameObject.activeSelf ? 0 : 1);
     }
 
     public void SellPet()
@@ -75,15 +74,6 @@ public class PetMono : MonoBehaviour
         Destroy(gameObject, .1f);
 
     }
-
-    public virtual void ChoAn()
-    {
-
-        petMovement.ChangeSpeed(1);
-        menuPetEvent.ShowMenu();
-        petAction?.Invoke();
-    }
-
 
     protected void ThoiGianChoAn()
     {
@@ -103,6 +93,7 @@ public class PetMono : MonoBehaviour
 
     public void DaChoAn()
     {
+        petMovement.ChangeSpeed(1);
         petModel.remainingTimeChoAn = petModel.timeChoAn;
         statusBar.SetActiveHealthBar(true);
         statusBar.SetActiveStatusText(false);
