@@ -12,7 +12,7 @@ public class MenuPetEvent : MonoBehaviour
     public void ShowMenu()
     {
         gameObject.SetActive(!gameObject.activeSelf);
-        
+
     }
 
     public void AddSell(UnityAction action)

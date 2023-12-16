@@ -530,8 +530,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 474580174793866975}
-        m_TargetAssemblyTypeName: MenuPetEvent, Assembly-CSharp
+      - m_Target: {fileID: 5898069274606062155}
+        m_TargetAssemblyTypeName: PetMono, Assembly-CSharp
         m_MethodName: ShowMenu
         m_Mode: 1
         m_Arguments:

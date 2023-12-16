@@ -56,5 +56,7 @@ public class PetMovement : MoveObject
     public override void ChangeSpeed(float newSpeed)
     {
         base.ChangeSpeed(newSpeed);
+        
+
     }
 }
