@@ -170,6 +170,7 @@ MonoBehaviour:
     timeDeTrung: 5
     speed: 1
   pet: {fileID: 9120763576701410611}
+  soLuongText: {fileID: 0}
 --- !u!1 &9120763577211105035
 GameObject:
   m_ObjectHideFlags: 0
