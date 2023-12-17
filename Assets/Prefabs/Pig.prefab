@@ -517,7 +517,7 @@ MonoBehaviour:
   menuPetEvent: {fileID: 389241350}
   statusBar: {fileID: 2921269092571803796}
   petModel:
-    price: 0
+    price: 2000
     remainingTime: 15
     remainingTimeChoAn: 0
     timeChoAn: 2

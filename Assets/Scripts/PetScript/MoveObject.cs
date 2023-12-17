@@ -69,7 +69,6 @@ public class MoveObject : MonoBehaviour
     public virtual void ChangeSpeed(float newSpeed)
     {
         speed = newSpeed;
-        Debug.Log(newSpeed);
     }
 
 }

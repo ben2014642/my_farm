@@ -96,6 +96,6 @@ public class PetMono : MonoBehaviour
         petModel.remainingTimeChoAn = petModel.timeChoAn;
         statusBar.SetActiveHealthBar(true);
         statusBar.SetActiveStatusText(false);
-
+        menuPetEvent.CloseMenu();
     }
 }

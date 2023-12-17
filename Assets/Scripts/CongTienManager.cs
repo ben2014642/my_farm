@@ -1,12 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class CongTienManager : MonoBehaviour
 {
     public static CongTienManager instance;
     [SerializeField] GameObject congTienPrefab;
-    int sumcoint = 0;
+    [SerializeField] TextMeshProUGUI cointText;
+    [SerializeField] protected PlayerModel playerModel;
+    //int sumcoint = 0;
     private void Awake()
     {
         instance = this;
@@ -16,6 +20,7 @@ public class CongTienManager : MonoBehaviour
         var obj = Instantiate(congTienPrefab);
         obj.transform.position = position;
         obj.GetComponent<CongTien>().SetText($"+ {coint} Coin");
-        sumcoint += coint;
+        playerModel.AddCoin(coint);
+        cointText.text = String.Format("{0:C}", $"{playerModel.GetCoin()}");
     }
 }

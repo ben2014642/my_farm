@@ -9,7 +9,7 @@ public class PetModel
     public int price;
     public float remainingTime = 6;
     public float remainingTimeChoAn;
-    public float timeChoAn = 5;
+    public float timeChoAn = 2;
     public float timeDeTrung = 5;
     public float speed = 1;
 
