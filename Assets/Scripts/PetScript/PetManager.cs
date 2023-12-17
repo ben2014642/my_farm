@@ -5,12 +5,14 @@ using UnityEngine;
 
 public class PetManager : MonoBehaviour
 {
-    const string nameFish = "objFish";
-    const string nameGa = "objGa";
-    const string namePig = "objPig";
-    const string nameRabit = "objRabit";
+    const int Fish = 2;
+    const int Chicken = 3;
+    const int Pig = 4;
+    const int Rabit = 5;
+
     protected static PetManager instance;
     public static PetManager Instance { get => instance; }
+
     public static Action petAction;
     public Transform tfMinGround;
     public Transform tfMaxGround;
@@ -22,25 +24,25 @@ public class PetManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        for (int i = 0; i < 1; i++)
+        /*for (int i = 0; i < 1; i++)
         {
             Spawn("objGa");
-        }
+        }*/
     }
 
-    public void Spawn(string petName)
+    public void Spawn(int petName)
     {
         GameObject petObj = null;
 
         switch (petName)
         {
-            case namePig:
+            case Pig:
                 petObj = objPig;
                 break;
-            case nameRabit:
+            case Rabit:
                 petObj = objRabit;
                 break;
-            case nameGa:
+            case Chicken:
                 petObj = objGa;
                 break;
             default:
@@ -54,7 +56,7 @@ public class PetManager : MonoBehaviour
         var petMovement = obj.GetComponent<PetMovement>();
         if (petMovement != null)
         {
-            if (petName == "objFish")
+            if (petName == Fish)
             {
                 petMovement.SetTf(tfMinWater, tfMaxWater);
             }

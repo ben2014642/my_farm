@@ -2,20 +2,40 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-[Serializable]
-public class PlayerModel
+using TMPro;
+public class PlayerModel : MonoBehaviour
 {
-    [SerializeField] int coint;
 
-    public int GetCoin()
+    protected static PlayerModel instance;
+    public static PlayerModel Instance { get => instance; }
+
+    [SerializeField] float coin;
+    [SerializeField] TextMeshProUGUI coinTxt; 
+
+    private void Start()
     {
-        return coint;
+        SetTextCoin();
+    }
+    public float GetCoin()
+    {
+        return coin;
     }
 
-    public void AddCoin(int val)
+    public void AddCoin(float val)
     {
-        coint += val;
+        coin += val;
+        SetTextCoin();
+    }
+
+    public void MinusCoin(float val)
+    {
+        coin -= val;
+        SetTextCoin();
+    }
+
+    public void SetTextCoin()
+    {
+        coinTxt.text = $"{coin}";
     }
 
 }

@@ -337,7 +337,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7311229994885854532}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 327977257270017709, guid: 1f8f813fa4ddb4a4382e1ae367620edf, type: 3}
+        m_TargetAssemblyTypeName: ShopManager, Assembly-CSharp
+        m_MethodName: Buy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &9199205639133078849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,10 +362,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ba2d560668edfd4c80be7ef3cbb2cc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  namePet: {fileID: 5080805082111974892}
-  priceTxt: {fileID: 1714582745082865086}
-  sellPriceTxt: {fileID: 8764820757196597593}
-  timeGrownTxt: {fileID: 3709400698352511261}
+  namePetObj: {fileID: 5080805082111974892}
+  priceTxtObj: {fileID: 1714582745082865086}
+  sellPriceTxtObj: {fileID: 8764820757196597593}
+  timeGrownTxtObj: {fileID: 3709400698352511261}
   iconItem: {fileID: 2461813333248438074}
 --- !u!1 &3709400698352511261
 GameObject:
