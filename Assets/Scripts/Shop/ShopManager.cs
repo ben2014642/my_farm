@@ -4,14 +4,17 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using System;
 
 public class ShopManager : MonoBehaviour
 {
-    [SerializeField] ShopModel shopModel;
     [SerializeField] GameObject itemPre;
     [SerializeField] Transform content;
+    [SerializeField] List<ShopModel> shopModel;
+    [SerializeField] PlayerModel playerModel;
 
     [SerializeField] Button btnClose;
+
     private void Awake()
     {
         InitialShopItem();
@@ -21,39 +24,15 @@ public class ShopManager : MonoBehaviour
 
     public void InitialShopItem()
     {
-        foreach (ShopItem item in shopModel.shopItems)
+        foreach (ShopModel item in shopModel)
         {
             GameObject itemObj = null;
             itemObj = Instantiate(itemPre, content);
             ItemManager getItem = itemObj.GetComponent<ItemManager>();
+            getItem.SetModel(item);
+            getItem.SetInfo();
+            getItem.btnBuy.onClick.AddListener(() => Buy(item));
 
-            //set id
-            getItem.idItem = item.idItem;
-
-            //set name
-            GameObject namePet = getItem.namePetObj;
-            namePet.GetComponent<TextMeshProUGUI>().text = $"Name: {item.namePet}";
-            getItem.namePet = item.namePet;
-
-            //set price
-            GameObject priceTxt = getItem.priceTxtObj;
-            priceTxt.GetComponent<TextMeshProUGUI>().text = $"Giá: {item.price}";
-            getItem.price = item.price;
-
-            //set sell price
-            GameObject sellPriceTxt = getItem.sellPriceTxtObj;
-            sellPriceTxt.GetComponent<TextMeshProUGUI>().text = $"Giá bán: {item.sellPrice}";
-            getItem.sellPrice = item.sellPrice;
-
-            //set time grown
-            GameObject timeGrownTxt = itemObj.GetComponent<ItemManager>().timeGrownTxtObj;
-            timeGrownTxt.GetComponent<TextMeshProUGUI>().text = $"Thời gian lớn: {item.timeGrown}p";
-            getItem.timeGrown = item.timeGrown;
-
-            //set image
-            GameObject iconItem = itemObj.GetComponent<ItemManager>().iconItem;
-            iconItem.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/"+item.idImage);
-            getItem.idImage = item.idImage;
         }
     }
 
@@ -68,17 +47,27 @@ public class ShopManager : MonoBehaviour
 
     }
 
-    public void Buy()
+    public void Buy(ShopModel model)
     {
-        GameObject ButtonRef = GameObject.FindGameObjectWithTag("Event").GetComponent<EventSystem>().currentSelectedGameObject;
-        ItemManager item = ButtonRef.GetComponent<ItemManager>();
+        //GameObject ButtonRef = GameObject.FindGameObjectWithTag("Event").GetComponent<EventSystem>().currentSelectedGameObject;
+        //ItemManager item = ButtonRef.GetComponent<ItemManager>();
 
-        /*if (playerModel.GetComponent<PlayerModel>().GetCoin() >= item.price)
+        if (playerModel.GetCoin() >= model.price)
+        {
+            PetManager.Instance.Spawn(model.idImage);
+            playerModel.AddCoin(-model.price);
+        } else
+        {
+            Debug.Log("Bạn dell đủ tiền !");
+
+        }
+
+        /*if (PlayerModel.Instance.GetCoin() >= item.price)
         {
             PetManager.Instance.Spawn(item.idImage);
-            playerModel.GetComponent<PlayerModel>().MinusCoin(item.price);
+            PlayerModel.Instance.MinusCoin(item.price);
         }*/
-        PetManager.Instance.Spawn(item.idImage);
+        //PetManager.Instance.Spawn(item.idImage);
 
 
     }

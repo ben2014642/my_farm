@@ -1,22 +1,38 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ItemManager : MonoBehaviour
 {
-    public GameObject namePetObj;
-    public GameObject priceTxtObj;
-    public GameObject sellPriceTxtObj;
-    public GameObject timeGrownTxtObj;
-    public GameObject iconItem;
+    [SerializeField] TextMeshProUGUI namePetObj;
+    [SerializeField] TextMeshProUGUI priceTxtObj;
+    [SerializeField] TextMeshProUGUI sellPriceTxtObj;
+    [SerializeField] TextMeshProUGUI timeGrownTxtObj;
+    [SerializeField] GameObject iconItem;
+    [SerializeField] PlayerModel playerModel;
+    public Button btnBuy;
+    ShopModel model;
 
-    public int idItem { get; set; }
-    public int idImage { get; set; }
-    public string namePet { get; set; }
-    public float price { get; set; }
-    public float sellPrice { get; set; }
-    public float timeGrown { get; set; }
+    public void SetInfo()
+    {
+        namePetObj.text = $"Name: {model.namePet}";
+        priceTxtObj.text = $"Giá: {model.price}";
+        priceTxtObj.text = $"Giá bán: {model.sellPrice}";
+        timeGrownTxtObj.text = $"Thời gian lớn {model.timeGrown}p";
+        iconItem.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/" + model.idImage);
+    }
 
+    public void SetModel(ShopModel model)
+    {
+        this.model = model;
+    }
+
+    public void ClickBuy()
+    {
+        PetManager.Instance.Spawn(model.idImage);
+        playerModel.AddCoin(-model.price);
+    }
 
 }

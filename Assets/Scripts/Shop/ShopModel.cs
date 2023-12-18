@@ -6,8 +6,11 @@ using UnityEngine;
 [Serializable]
 public class ShopModel 
 {
-    public ShopItem[] shopItems;
-    
+    public int idItem;
+    public string namePet;
+    public float price;
+    public float sellPrice;
+    public float timeGrown;
+    public int idImage;
 
-    
 }
