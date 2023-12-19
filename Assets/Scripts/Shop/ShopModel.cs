@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public class ShopModel 
+public class ShopModel
 {
     public int idItem;
     public string namePet;

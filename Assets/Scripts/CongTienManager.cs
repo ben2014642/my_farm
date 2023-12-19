@@ -15,11 +15,11 @@ public class CongTienManager : MonoBehaviour
     {
         instance = this;
     }
-    public void CreateText(Vector2 position, int coint)
+    public void CreateText(Vector2 position, float coint)
     {
         var obj = Instantiate(congTienPrefab);
         obj.transform.position = position;
-        obj.GetComponent<CongTien>().SetText($"+ {coint} Coin");
+        obj.GetComponent<CongTien>().SetText($"{(coint >= 0 ? "+" : ' ')} {coint} Coin");
         playerModel.AddCoin(coint);
         cointText.text = String.Format("{0:C}", $"{playerModel.GetCoin()}");
     }

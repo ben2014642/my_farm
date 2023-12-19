@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System;
 
-public class ShopManager : MonoBehaviour
+public class ShopManager : PopupBasic
 {
     [SerializeField] GameObject itemPre;
     [SerializeField] Transform content;
@@ -55,10 +55,10 @@ public class ShopManager : MonoBehaviour
         if (playerModel.GetCoin() >= model.price)
         {
             PetManager.Instance.Spawn(model.idImage);
-            playerModel.AddCoin(-model.price);
+            CongTienManager.instance.CreateText(gameObject.transform.position, -model.price);
         } else
         {
-            Debug.Log("Bạn dell đủ tiền !");
+            CreatePopup("Bạn dell đủ tiền");
 
         }
 

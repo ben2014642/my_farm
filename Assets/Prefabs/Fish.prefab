@@ -514,8 +514,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab53acb6fded1044191da8a50275a5ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  popupPre: {fileID: 662551312517680913, guid: a4130514c3772414f9c65155bde7bfc4, type: 3}
   menuPetEvent: {fileID: 3069344952730804672}
-  statusBar: {fileID: 1960813267443050276}
   petModel:
     price: 0
     remainingTime: 120
@@ -523,6 +523,7 @@ MonoBehaviour:
     timeChoAn: 5
     timeDeTrung: 5
     speed: 1
+  statusBar: {fileID: 1960813267443050276}
   pet: {fileID: 5630114786063863947}
 --- !u!114 &2303601451096646161
 MonoBehaviour:

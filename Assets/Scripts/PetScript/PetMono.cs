@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PetMono : MonoBehaviour
+public class PetMono : PopupBasic
 {
     [SerializeField] protected MenuPetEvent menuPetEvent;
-    [SerializeField] StatusBar statusBar;
     [SerializeField] protected PetModel petModel;
+    [SerializeField] StatusBar statusBar;
     [SerializeField] GameObject pet;    
     protected PetMovement petMovement;
 
@@ -30,7 +30,7 @@ public class PetMono : MonoBehaviour
     {
         petMovement = gameObject.GetComponent<PetMovement>();
         statusBar.SetTime(MethodExtensions.RemainingTime(petModel.remainingTime));
-        petModel.remainingTimeChoAn = petModel.timeChoAn;
+        petModel.remainingTimeChoAn = petModel.remainingTime / 3;
         menuPetEvent.AddSell(SellPet);
     }
 
@@ -67,9 +67,14 @@ public class PetMono : MonoBehaviour
 
     public void SellPet()
     {
+        if (petModel.remainingTime >= 0)
+        {
+            CreatePopup("Thú chưa trưởng thành !");
+            return;
+        }
+
         CongTienManager.instance.CreateText(transform.position, petModel.GetCoinSell());
         Destroy(gameObject, .1f);
-
     }
 
     protected void ThoiGianChoAn()
@@ -93,7 +98,7 @@ public class PetMono : MonoBehaviour
     public void DaChoAn()
     {
         petMovement.ChangeSpeed(1);
-        petModel.remainingTimeChoAn = petModel.timeChoAn;
+        petModel.remainingTimeChoAn = petModel.remainingTime / 3;
         statusBar.SetActiveHealthBar(true);
         statusBar.SetActiveStatusText(false);
         menuPetEvent.CloseMenu();

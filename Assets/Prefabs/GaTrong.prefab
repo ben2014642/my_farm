@@ -160,8 +160,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f341a291f9b07543a203364a2aaf3f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  popupPre: {fileID: 662551312517680913, guid: a4130514c3772414f9c65155bde7bfc4, type: 3}
   menuPetEvent: {fileID: 2118102544917691305}
-  statusBar: {fileID: 5583551463867004053}
   petModel:
     price: 2000
     remainingTime: 6
@@ -169,6 +169,7 @@ MonoBehaviour:
     timeChoAn: 2
     timeDeTrung: 5
     speed: 1
+  statusBar: {fileID: 5583551463867004053}
   pet: {fileID: 9120763576701410611}
 --- !u!1 &9120763577211105035
 GameObject:
