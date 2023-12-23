@@ -8,8 +8,7 @@ public class CongTienManager : MonoBehaviour
 {
     public static CongTienManager instance;
     [SerializeField] GameObject congTienPrefab;
-    [SerializeField] TextMeshProUGUI cointText;
-    [SerializeField] protected PlayerModel playerModel;
+    [SerializeField] protected PlayerManager playerManager;
     //int sumcoint = 0;
     private void Awake()
     {
@@ -20,7 +19,6 @@ public class CongTienManager : MonoBehaviour
         var obj = Instantiate(congTienPrefab);
         obj.transform.position = position;
         obj.GetComponent<CongTien>().SetText($"{(coint >= 0 ? "+" : ' ')} {coint} Coin");
-        playerModel.AddCoin(coint);
-        cointText.text = String.Format("{0:C}", $"{playerModel.GetCoin()}");
+        playerManager.AddCoin(coint);
     }
 }

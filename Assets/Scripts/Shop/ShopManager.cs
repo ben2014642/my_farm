@@ -11,7 +11,7 @@ public class ShopManager : PopupBasic
     [SerializeField] GameObject itemPre;
     [SerializeField] Transform content;
     [SerializeField] List<ShopModel> shopModel;
-    [SerializeField] PlayerModel playerModel;
+    [SerializeField] PlayerManager playerManager;
 
     [SerializeField] Button btnClose;
 
@@ -52,9 +52,9 @@ public class ShopManager : PopupBasic
         //GameObject ButtonRef = GameObject.FindGameObjectWithTag("Event").GetComponent<EventSystem>().currentSelectedGameObject;
         //ItemManager item = ButtonRef.GetComponent<ItemManager>();
 
-        if (playerModel.GetCoin() >= model.price)
+        if (playerManager.GetCoin() >= model.price)
         {
-            PetManager.Instance.Spawn(model.idImage);
+            PetManager.Instance.Spawn(model);
             CongTienManager.instance.CreateText(gameObject.transform.position, -model.price);
         } else
         {

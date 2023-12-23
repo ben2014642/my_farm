@@ -6,25 +6,20 @@ public class PlantManager : MonoBehaviour
 {
     [SerializeField] GameObject land;
     [SerializeField] float soLuong;
-    [SerializeField] MenuFarm menuFarm;
+
+
     // Start is called before the first frame update
     void Start()
     {
 
         for (int i = 0; i < soLuong; i++)
         {
-            Instantiate(land, transform.Find("Canvas").transform);
+            Instantiate(land, gameObject.transform);
         }
+
+
     }
 
-    public void showMenu()
-    {
-        menuFarm.showMenu();
-    }
 
-    public void TrongCay()
-    {
-        menuFarm.TrongCay();
-    }
     
 }

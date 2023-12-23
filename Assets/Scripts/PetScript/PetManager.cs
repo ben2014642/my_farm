@@ -30,11 +30,11 @@ public class PetManager : MonoBehaviour
         }*/
     }
 
-    public void Spawn(int petName)
+    public void Spawn(ShopModel pet)
     {
         GameObject petObj = null;
 
-        switch (petName)
+        switch (pet.idImage)
         {
             case Pig:
                 petObj = objPig;
@@ -52,11 +52,11 @@ public class PetManager : MonoBehaviour
 
         var obj = Instantiate(petObj);
         obj.SetActive(true);
-
+        obj.GetComponent<PetMono>().SetInfo(pet);
         var petMovement = obj.GetComponent<PetMovement>();
         if (petMovement != null)
         {
-            if (petName == Fish)
+            if (pet.idImage == Fish)
             {
                 petMovement.SetTf(tfMinWater, tfMaxWater);
             }

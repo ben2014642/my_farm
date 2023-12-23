@@ -11,7 +11,6 @@ public class ItemManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI sellPriceTxtObj;
     [SerializeField] TextMeshProUGUI timeGrownTxtObj;
     [SerializeField] GameObject iconItem;
-    [SerializeField] PlayerModel playerModel;
     public Button btnBuy;
     ShopModel model;
 
@@ -29,10 +28,5 @@ public class ItemManager : MonoBehaviour
         this.model = model;
     }
 
-    public void ClickBuy()
-    {
-        PetManager.Instance.Spawn(model.idImage);
-        playerModel.AddCoin(-model.price);
-    }
 
 }

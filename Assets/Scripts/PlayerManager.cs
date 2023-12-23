@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-public class PlayerModel : MonoBehaviour
+public class PlayerManager : MonoBehaviour
 {
 
-    protected static PlayerModel instance;
-    public static PlayerModel Instance { get => instance; }
+    protected static PlayerManager instance;
+    public static PlayerManager Instance { get => instance; }
 
     [SerializeField] float coin;
     [SerializeField] TextMeshProUGUI coinTxt; 
@@ -19,6 +19,11 @@ public class PlayerModel : MonoBehaviour
     public float GetCoin()
     {
         return coin;
+    }
+
+    public void SetCoin(float coin)
+    {
+        this.coin = coin;
     }
 
     public void AddCoin(float val)

@@ -517,6 +517,7 @@ MonoBehaviour:
   popupPre: {fileID: 662551312517680913, guid: a4130514c3772414f9c65155bde7bfc4, type: 3}
   menuPetEvent: {fileID: 389241350}
   petModel:
+    namePet: 
     price: 20000
     remainingTime: 15
     remainingTimeChoAn: 0
@@ -641,6 +642,34 @@ PrefabInstance:
     - target: {fileID: 2130493350314517814, guid: b27ff124a29e6b145b55db12edac8d1f, type: 3}
       propertyPath: m_Name
       value: StatusBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 2130493350314517814, guid: b27ff124a29e6b145b55db12edac8d1f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2130493350586848538, guid: b27ff124a29e6b145b55db12edac8d1f, type: 3}
+      propertyPath: m_text
+      value: "\u0110ang \u0111\xF3i"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2130493350586848539, guid: b27ff124a29e6b145b55db12edac8d1f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0.2328
+      objectReference: {fileID: 0}
+    - target: {fileID: 2130493350586848539, guid: b27ff124a29e6b145b55db12edac8d1f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.15319991
+      objectReference: {fileID: 0}
+    - target: {fileID: 2130493351798978684, guid: b27ff124a29e6b145b55db12edac8d1f, type: 3}
+      propertyPath: m_text
+      value: 00:04
+      objectReference: {fileID: 0}
+    - target: {fileID: 2130493351798978685, guid: b27ff124a29e6b145b55db12edac8d1f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.062
+      objectReference: {fileID: 0}
+    - target: {fileID: 2130493351798978685, guid: b27ff124a29e6b145b55db12edac8d1f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.126
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b27ff124a29e6b145b55db12edac8d1f, type: 3}

@@ -6,7 +6,8 @@ using UnityEngine;
 [Serializable]
 public class PetModel
 {
-    public int price;
+    public string namePet;
+    public float price;
     public float remainingTime = 6;
     public float remainingTimeChoAn;
     public float timeChoAn;
@@ -14,7 +15,7 @@ public class PetModel
     public float speed = 1;
 
 
-    internal int GetCoinSell()
+    internal float GetCoinSell()
     {
         return price;
     }  

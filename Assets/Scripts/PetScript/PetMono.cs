@@ -11,6 +11,14 @@ public class PetMono : PopupBasic
     [SerializeField] GameObject pet;    
     protected PetMovement petMovement;
 
+    public void SetInfo(ShopModel pet)
+    {
+        petModel.namePet = pet.namePet; 
+        petModel.price = pet.price;
+        petModel.remainingTime = pet.timeGrown;
+        
+    }
+
     protected virtual void OnEnable()
     {
         TimerManager.timeDownEvent += TimeDownEvent;
@@ -49,7 +57,6 @@ public class PetMono : PopupBasic
             if (petModel.remainingTime <= 0 )
             {
                 statusBar.SetActiveStatusText(true);
-                statusBar.SetActiveHealthBar(false);
                 statusBar.SetActiveTimerText(false);
                 statusBar.SetStatusText("Đã trưởng thành !");
                 menuPetEvent.hideItemCare();
@@ -61,13 +68,13 @@ public class PetMono : PopupBasic
     public void ShowMenu()
     {
         menuPetEvent.ShowMenu();
-        statusBar.SetActiveHealthBar(!menuPetEvent.gameObject.activeSelf);
+        //statusBar.SetActiveHealthBar(!menuPetEvent.gameObject.activeSelf);
         petMovement.ChangeSpeed(menuPetEvent.gameObject.activeSelf ? 0 : 1);
     }
 
     public void SellPet()
     {
-        if (petModel.remainingTime >= 0)
+        if (petModel.remainingTime > 0)
         {
             CreatePopup("Thú chưa trưởng thành !");
             return;
@@ -87,7 +94,6 @@ public class PetMono : PopupBasic
         {
             if (petModel.remainingTime >= 0)
             {
-                statusBar.SetActiveHealthBar(false);
                 statusBar.SetActiveStatusText(true);
 
                 statusBar.SetStatusText("Đói quá");
@@ -99,7 +105,6 @@ public class PetMono : PopupBasic
     {
         petMovement.ChangeSpeed(1);
         petModel.remainingTimeChoAn = petModel.remainingTime / 3;
-        statusBar.SetActiveHealthBar(true);
         statusBar.SetActiveStatusText(false);
         menuPetEvent.CloseMenu();
     }
