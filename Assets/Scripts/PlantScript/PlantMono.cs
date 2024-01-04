@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlantMono : PopupBasic
+public class PlantMono : PopupManager
 {
     [SerializeField] MenuFarm menuFarm;
     [SerializeField] StatusBar statusBar;
@@ -73,7 +73,8 @@ public class PlantMono : PopupBasic
         {
             return;
         }
-        CreatePopup("Thu hoạch thành công !");
+        PopupBasic obj = CreatePopup("shop", "Prefabs/Popup");
+        obj.SetMessage("Thu Hoạch Thành Công !");
         SetDatTrong();
     }
 
@@ -100,7 +101,8 @@ public class PlantMono : PopupBasic
             return;
         } else
         {
-            CreatePopup("Ô này đã được trồng !");
+            PopupBasic obj = CreatePopup("shop", "Prefabs/Popup");
+            obj.SetMessage("Ô Này Đã Được Trồng !");
             HandleShowMenu();
         }
     }

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System;
 
-public class ShopManager : PopupBasic
+public class ShopManager : PopupManager
 {
     [SerializeField] GameObject itemPre;
     [SerializeField] Transform content;
@@ -58,8 +58,8 @@ public class ShopManager : PopupBasic
             CongTienManager.instance.CreateText(gameObject.transform.position, -model.price);
         } else
         {
-            CreatePopup("Bạn dell đủ tiền");
-
+            PopupBasic obj = CreatePopup("shop", "Prefabs/Popup");
+            obj.SetMessage("Bạn dell đủ tiền !");
         }
 
         /*if (PlayerModel.Instance.GetCoin() >= item.price)

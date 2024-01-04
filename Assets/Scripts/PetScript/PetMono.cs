@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PetMono : PopupBasic
+public class PetMono : PopupManager
 {
     [SerializeField] protected MenuPetEvent menuPetEvent;
     [SerializeField] protected PetModel petModel;
@@ -76,7 +76,9 @@ public class PetMono : PopupBasic
     {
         if (petModel.remainingTime > 0)
         {
-            CreatePopup("Thú chưa trưởng thành !");
+            PopupBasic obj = CreatePopup("pet", "Prefabs/PopupManager");
+            obj.SetActive(true);
+            obj.CreateMessage("Thú chưa trưởng thành !");
             return;
         }
 

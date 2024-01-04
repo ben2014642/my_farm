@@ -186,6 +186,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &127067698
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 127067699}
+  m_Layer: 0
+  m_Name: PoolManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &127067699
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127067698}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.32421875, y: -4.9648438, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1594192696}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &176607489
 GameObject:
   m_ObjectHideFlags: 0
@@ -2213,7 +2244,7 @@ RectTransform:
   m_Children:
   - {fileID: 1482475552}
   m_Father: {fileID: 1594192696}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3281,7 +3312,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 685d3b94df339f8439bdbcea0c2d1eb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popupPre: {fileID: 0}
   otrungSpi:
   - {fileID: 21300000, guid: 7eb797bda26174a438167d770eb738b6, type: 3}
   - {fileID: 21300000, guid: 25f226032014a7a4790dd47459d64adb, type: 3}
@@ -3644,7 +3674,7 @@ RectTransform:
   m_Children:
   - {fileID: 229026662}
   m_Father: {fileID: 1594192696}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3755,7 +3785,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd3818e87a1680e43b8ac69bebb0b9b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coin: 0
+  coin: 200000000
   coinTxt: {fileID: 1482475550}
 --- !u!1 &1626261303
 GameObject:

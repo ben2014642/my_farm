@@ -6,50 +6,16 @@ using TMPro;
 public class CongTien : MonoBehaviour
 {
 
-    [SerializeField] float speed = 1.5f;
-    [SerializeField] float lifeTime;
     public TextMeshProUGUI congTienUI;
     // Start is called before the first frame update
 
-    private void Start()
+    public void HiddenObj()
     {
-        StartCoroutine(FadeOut());
-    }
-    // Update is called once per frame
-
-    void Update()
-    {
-        MoveObject();
+        gameObject.SetActive(false);
     }
 
-    void MoveObject()
+    internal void SetText(string value)
     {
-        transform.Translate(Vector2.up * speed * Time.deltaTime);
-    }
-
-    public void SetText(string text)
-    {
-        congTienUI.text = text;
-    }
-
-    public IEnumerator FadeOut()
-    {
-        float startAlpha = congTienUI.color.a;
-        float rate = 1.0f / lifeTime;
-        float progress = 0.0f;
-
-        while (progress < 1.0)
-        {
-            Color tmp = congTienUI.color;
-            tmp.a = Mathf.Lerp(startAlpha, 0, progress);
-            congTienUI.color = tmp;
-
-            progress += rate * Time.deltaTime;
-            yield return null;
-
-        }
-       
-        Destroy(gameObject);
-       
+        congTienUI.text = value;
     }
 }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5947503694150392767}
   - component: {fileID: 5947503694150392761}
   - component: {fileID: 5947503694150392766}
+  - component: {fileID: 8488978477797680022}
   m_Layer: 5
   m_Name: Sell
   m_TagString: Untagged
@@ -35,8 +36,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000023926, y: -0.042}
-  m_SizeDelta: {x: 2.7189, y: 0.4203}
+  m_AnchoredPosition: {x: -0.7568, y: -0.042}
+  m_SizeDelta: {x: 0, y: 0.4203}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5947503694150392761
 CanvasRenderer:
@@ -66,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: +10000 Coints
+  m_text: +1000
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -135,6 +136,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &8488978477797680022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5947503694150392764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 2
+  m_VerticalFit: 0
 --- !u!1 &5947503695027585719
 GameObject:
   m_ObjectHideFlags: 0
@@ -148,6 +163,7 @@ GameObject:
   - component: {fileID: 5947503695027585712}
   - component: {fileID: 5947503695027585713}
   - component: {fileID: 5947503695027585714}
+  - component: {fileID: 46238254005624563}
   m_Layer: 5
   m_Name: CongTien
   m_TagString: Untagged
@@ -173,8 +189,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5005208, y: 0.5}
   m_AnchorMax: {x: 0.5005208, y: 0.5}
-  m_AnchoredPosition: {x: -0.5026, y: -0.0377}
-  m_SizeDelta: {x: 2.9184, y: 0.7483}
+  m_AnchoredPosition: {x: -0.627, y: -0.0377}
+  m_SizeDelta: {x: 2.6698, y: 0.7483}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &5947503695027585715
 Canvas:
@@ -249,6 +265,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c10d6b1400e43fe4e8027ea1da3804f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.5
-  lifeTime: 1.5
   congTienUI: {fileID: 5947503694150392766}
+--- !u!95 &46238254005624563
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5947503695027585719}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: abeff45a1c4c1914b9aec5e0fee74b5c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

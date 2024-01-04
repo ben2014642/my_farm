@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class OTrungManager : PopupBasic
+public class OTrungManager : PopupManager
 {
     public static OTrungManager instance;
     [SerializeField] Sprite[] otrungSpi;
@@ -33,7 +33,9 @@ public class OTrungManager : PopupBasic
 
         if (soluong <= 0)
         {
-            CreatePopup("Không có trứng để thu hoạch !");
+            PopupBasic obj = CreatePopup("shop", "Prefabs/PopupManager");
+            obj.SetActive(true);
+            obj.CreateMessage("Không có trứng để thu hoạch !");
             return;
         }
 

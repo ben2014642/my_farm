@@ -514,7 +514,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0785f3d25093ef249b005cd57a78f05e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popupPre: {fileID: 662551312517680913, guid: a4130514c3772414f9c65155bde7bfc4, type: 3}
   menuPetEvent: {fileID: 389241350}
   petModel:
     namePet: 
@@ -645,7 +644,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2130493350314517814, guid: b27ff124a29e6b145b55db12edac8d1f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2130493350586848538, guid: b27ff124a29e6b145b55db12edac8d1f, type: 3}
       propertyPath: m_text

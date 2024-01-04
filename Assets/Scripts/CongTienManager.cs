@@ -16,7 +16,7 @@ public class CongTienManager : MonoBehaviour
     }
     public void CreateText(Vector2 position, float coint)
     {
-        var obj = Instantiate(congTienPrefab);
+        var obj = PoolManager.GetObj("congtien", congTienPrefab);
         obj.transform.position = position;
         obj.GetComponent<CongTien>().SetText($"{(coint >= 0 ? "+" : ' ')} {coint} Coin");
         playerManager.AddCoin(coint);
