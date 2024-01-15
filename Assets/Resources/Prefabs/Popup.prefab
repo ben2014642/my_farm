@@ -11,14 +11,14 @@ GameObject:
   - component: {fileID: 3383280948934461466}
   - component: {fileID: 3383280948934461468}
   - component: {fileID: 3383280948934461469}
-  - component: {fileID: 90903454}
+  - component: {fileID: 5286270480684957830}
   m_Layer: 0
   m_Name: Popup
-  m_TagString: Untagged
+  m_TagString: Popup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3383280948934461466
 RectTransform:
   m_ObjectHideFlags: 0
@@ -79,7 +79,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &90903454
+--- !u!114 &5286270480684957830
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   txtPopup: {fileID: 2697726492485646604}
-  btnClose: {fileID: 2001573292592429194}
+  btnClosePopup: {fileID: 2001573292592429194}
 --- !u!1 &4281008290401558563
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,7 +252,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 367.6, y: 36.79}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &445843936151050148
 CanvasRenderer:

@@ -19,6 +19,10 @@ public class CongTienManager : MonoBehaviour
         var obj = PoolManager.GetObj("congtien", congTienPrefab);
         obj.transform.position = position;
         obj.GetComponent<CongTien>().SetText($"{(coint >= 0 ? "+" : ' ')} {coint} Coin");
+        if (!obj.gameObject.activeSelf)
+        {
+            obj.SetActive(true);
+        }
         playerManager.AddCoin(coint);
     }
 }

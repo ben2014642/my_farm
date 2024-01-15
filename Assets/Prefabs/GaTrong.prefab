@@ -160,9 +160,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f341a291f9b07543a203364a2aaf3f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popupPre: {fileID: 662551312517680913, guid: a4130514c3772414f9c65155bde7bfc4, type: 3}
   menuPetEvent: {fileID: 2118102544917691305}
   petModel:
+    namePet: 
     price: 2000
     remainingTime: 6
     remainingTimeChoAn: 0
@@ -637,6 +637,14 @@ PrefabInstance:
     - target: {fileID: 2130493350314517814, guid: b27ff124a29e6b145b55db12edac8d1f, type: 3}
       propertyPath: m_Name
       value: StatusBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 2130493350314517814, guid: b27ff124a29e6b145b55db12edac8d1f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2130493350586848538, guid: b27ff124a29e6b145b55db12edac8d1f, type: 3}
+      propertyPath: m_text
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b27ff124a29e6b145b55db12edac8d1f, type: 3}

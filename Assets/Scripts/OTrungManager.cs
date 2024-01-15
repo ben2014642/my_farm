@@ -4,21 +4,25 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class OTrungManager : PopupManager
+public class OTrungManager : MonoBehaviour
 {
     public static OTrungManager instance;
     [SerializeField] Sprite[] otrungSpi;
     [SerializeField] SpriteRenderer spi;
     [SerializeField] int soluong = 0;
     [SerializeField] TextMeshProUGUI soLuongText;
+    protected PopupManager popupManager;
+
     private void Start()
     {
         spi = gameObject.GetComponent<SpriteRenderer>();
     }
     private void Awake()
     {
+        popupManager = GameObject.Find("PopupManager").GetComponent<PopupManager>();
         instance = this;
         SetSLTrung();
+
     }
 
     public void ThuHoachTrung(int sl)
@@ -33,9 +37,7 @@ public class OTrungManager : PopupManager
 
         if (soluong <= 0)
         {
-            PopupBasic obj = CreatePopup("shop", "Prefabs/PopupManager");
-            obj.SetActive(true);
-            obj.CreateMessage("Không có trứng để thu hoạch !");
+            popupManager.NewPopup("Không có trứng để thu hoạch !");
             return;
         }
 

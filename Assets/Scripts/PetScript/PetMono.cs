@@ -3,13 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PetMono : PopupManager
+public class PetMono : MonoBehaviour
 {
     [SerializeField] protected MenuPetEvent menuPetEvent;
     [SerializeField] protected PetModel petModel;
     [SerializeField] StatusBar statusBar;
     [SerializeField] GameObject pet;    
     protected PetMovement petMovement;
+    protected PopupManager popupManager;
+
+    private void Awake()
+    {
+        popupManager = GameObject.Find("PopupManager").GetComponent<PopupManager>();
+    }
 
     public void SetInfo(ShopModel pet)
     {
@@ -59,7 +65,7 @@ public class PetMono : PopupManager
                 statusBar.SetActiveStatusText(true);
                 statusBar.SetActiveTimerText(false);
                 statusBar.SetStatusText("Đã trưởng thành !");
-                menuPetEvent.hideItemCare();
+                //menuPetEvent.hideItemCare();
                 
             }
         }
@@ -76,9 +82,8 @@ public class PetMono : PopupManager
     {
         if (petModel.remainingTime > 0)
         {
-            PopupBasic obj = CreatePopup("pet", "Prefabs/PopupManager");
-            obj.SetActive(true);
-            obj.CreateMessage("Thú chưa trưởng thành !");
+
+            popupManager.NewPopup("Thú chưa trưởng thành !");
             return;
         }
 
@@ -88,7 +93,7 @@ public class PetMono : PopupManager
 
     protected void ThoiGianChoAn()
     {
-        if (petModel.remainingTimeChoAn >= 0 && petModel.remainingTime >= 0)
+        if (petModel.remainingTimeChoAn >= 0 && petModel.remainingTime > 0)
         {
             petModel.remainingTimeChoAn -= 1;
         }
@@ -97,7 +102,6 @@ public class PetMono : PopupManager
             if (petModel.remainingTime >= 0)
             {
                 statusBar.SetActiveStatusText(true);
-
                 statusBar.SetStatusText("Đói quá");
             }
         }
@@ -105,6 +109,10 @@ public class PetMono : PopupManager
 
     public void DaChoAn()
     {
+        if (petModel.remainingTime <= 0)
+        {
+            popupManager.NewPopup("Không thể sử dụng chức năng !");
+        }
         petMovement.ChangeSpeed(1);
         petModel.remainingTimeChoAn = petModel.remainingTime / 3;
         statusBar.SetActiveStatusText(false);

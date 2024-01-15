@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlantMono : PopupManager
+public class PlantMono : MonoBehaviour
 {
     [SerializeField] MenuFarm menuFarm;
     [SerializeField] StatusBar statusBar;
@@ -17,6 +17,12 @@ public class PlantMono : PopupManager
     protected FarmModel currentPlant;
     protected float timeGrown;
     protected bool isTrong = false;
+    protected PopupManager popupManager;
+
+    private void Awake()
+    {
+        popupManager = GameObject.Find("PopupManager").GetComponent<PopupManager>();
+    }
 
     void Start()
     {
@@ -73,8 +79,7 @@ public class PlantMono : PopupManager
         {
             return;
         }
-        PopupBasic obj = CreatePopup("shop", "Prefabs/Popup");
-        obj.SetMessage("Thu Hoạch Thành Công !");
+        popupManager.NewPopup("Thu Hoạch Thành Công !");
         SetDatTrong();
     }
 
@@ -101,8 +106,8 @@ public class PlantMono : PopupManager
             return;
         } else
         {
-            PopupBasic obj = CreatePopup("shop", "Prefabs/Popup");
-            obj.SetMessage("Ô Này Đã Được Trồng !");
+            //PopupBasic obj = CreatePopup("shop", "Prefabs/Popup");
+            //obj.SetMessage("Ô Này Đã Được Trồng !");
             HandleShowMenu();
         }
     }

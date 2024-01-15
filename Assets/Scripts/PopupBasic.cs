@@ -6,28 +6,24 @@ using UnityEngine.UI;
 
 public class PopupBasic : MonoBehaviour
 {
-    protected string message;
+    //public static PopupBasic Instance;
+    //protected string message;
+    //[SerializeField] GameObject popupPre;
     [SerializeField] TextMeshProUGUI txtPopup;
-    [SerializeField] Button btnClose;
+    [SerializeField] Button btnClosePopup;
+
+    private void Awake()
+    {
+        btnClosePopup.onClick.AddListener(ClosePopup);
+    }
 
     public void SetMessage(string message)
     {
-        this.message = message;
-    }
-
-    public void SetActive(bool value)
-    {
-        gameObject.SetActive(value);
-    }
-    public void CreateMessage(string newMessage)
-    {
-        SetMessage(newMessage);
         txtPopup.text = message;
-        btnClose.onClick.AddListener(ClosePopup);
     }
 
     public void ClosePopup()
     {
-        SetActive(false);
+        Destroy(GameObject.FindGameObjectWithTag("Popup"), .2f);
     }
 }

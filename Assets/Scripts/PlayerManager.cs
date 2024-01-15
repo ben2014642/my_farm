@@ -10,6 +10,7 @@ public class PlayerManager : MonoBehaviour
     public static PlayerManager Instance { get => instance; }
 
     [SerializeField] float coin;
+    [SerializeField] int slotAnimal;
     [SerializeField] TextMeshProUGUI coinTxt; 
 
     private void Start()
@@ -41,6 +42,11 @@ public class PlayerManager : MonoBehaviour
     public void SetTextCoin()
     {
         coinTxt.text = $"{coin}";
+    }
+
+    public int GetSlotAnimal()
+    {
+        return slotAnimal;
     }
 
 }

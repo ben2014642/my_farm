@@ -50,7 +50,7 @@ public class PetManager : MonoBehaviour
                 break;
         }
 
-        var obj = PoolManager.GetObj("pet", petObj);
+        var obj = Instantiate(petObj);
         obj.SetActive(true);
         obj.GetComponent<PetMono>().SetInfo(pet);
         var petMovement = obj.GetComponent<PetMovement>();
